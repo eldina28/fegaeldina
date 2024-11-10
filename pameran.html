@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pameran Buku Geser</title>
+    <title>Pameran Buku </title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
@@ -19,6 +19,7 @@
             background-color: white;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
             border-radius: 10px;
+            position: relative;
         }
 
         h1 {
@@ -30,12 +31,12 @@
         /* Galeri Buku */
         .book-gallery {
             display: flex;
-            overflow-x: auto; /* memungkinkan scroll horizontal */
             gap: 20px;
             padding: 20px;
             scroll-behavior: smooth;
-            justify-content: center;
-            width: max-content; /* agar konten lebih panjang dari layar dan bisa digeser */
+            justify-content: flex-start;
+            overflow-x: auto; /* Mengaktifkan scroll horizontal */
+            width: 100%;
         }
 
         .book-card {
@@ -48,6 +49,7 @@
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             overflow: hidden;
+            flex-shrink: 0; /* Prevent shrinking of book cards */
         }
 
         .book-card:hover {
@@ -134,7 +136,6 @@
         <h1>Pameran Buku</h1>
 
         <div class="book-gallery" id="book-gallery">
-     
             <div class="book-card">
                 <img src="picture/624188002.jpg" alt="Buku 1">
                 <div class="book-card-body">
@@ -161,7 +162,7 @@
                 <img src="picture/624150005.jpg" alt="Buku 3">
                 <div class="book-card-body">
                     <h3 class="book-card-title">Princess, Bajak Laut & Alien</h3>
-                    <p class="book-card-description">Buku ini ditulis oleh (Clara Ng,Icha Rahmanti) yang mengisahkan MIKAL yang ingin memahami kenapa ayahnya harus diambil secara tragis.</p>
+                    <p class="book-card-description">Buku ini ditulis oleh (Clara Ng, Icha Rahmanti) yang mengisahkan MIKAL yang ingin memahami kenapa ayahnya harus diambil secara tragis.</p>
                     <div class="book-card-button">
                         <a href="#" class="btn-show-description">Deskripsi</a>
                     </div>
@@ -229,7 +230,6 @@
             button.addEventListener('click', function() {
                 const cardBody = this.closest('.book-card').querySelector('.book-card-body');
                 const description = cardBody.querySelector('.book-card-description');
-                
                 description.style.display = description.style.display === 'block' ? 'none' : 'block';
                 this.innerText = this.innerText === 'Deskripsi' ? 'Sembunyikan' : 'Tampilkan';
             });
