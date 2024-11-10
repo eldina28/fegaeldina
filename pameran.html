@@ -28,14 +28,14 @@
             color: #444;
         }
 
-        /* Galeri Buku */
+        
         .book-gallery {
             display: flex;
             gap: 20px;
             padding: 20px;
             scroll-behavior: smooth;
             justify-content: flex-start;
-            overflow-x: auto; /* Mengaktifkan scroll horizontal */
+            overflow-x: auto; 
             width: 100%;
         }
 
@@ -49,7 +49,7 @@
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             overflow: hidden;
-            flex-shrink: 0; /* Prevent shrinking of book cards */
+            flex-shrink: 0; 
         }
 
         .book-card:hover {
@@ -99,7 +99,7 @@
             background-color: #0056b3;
         }
 
-        /* Styling untuk kontrol scroll */
+        
         .scroll-button {
             background-color: #007bff;
             color: white;
@@ -131,6 +131,7 @@
     </style>
 </head>
 <body>
+    <div id="navbar-placeholder"></div>
 
     <div class="container">
         <h1>Pameran Buku</h1>
@@ -224,7 +225,10 @@
     <script src="js/bootstrap.min.js"></script>
 
     <script>
-        // Toggle description
+        $(function(){
+        $("#navbar-placeholder").load("navbar.html");
+    });
+        
         const buttons = document.querySelectorAll('.btn-show-description');
         buttons.forEach(button => {
             button.addEventListener('click', function() {
@@ -235,7 +239,7 @@
             });
         });
 
-        // Scroll Left and Right
+    
         document.getElementById('scroll-left').addEventListener('click', function() {
             document.getElementById('book-gallery').scrollBy({
                 left: -300,  
