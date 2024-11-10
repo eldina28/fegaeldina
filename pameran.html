@@ -3,13 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pameran Buku </title>
+    <title>Pameran Buku</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
             background-image: url("picture/2310-w062-n005-289B-p15-289.jpg");
             color: #333;
             font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav {
+            position: relative;
+            z-index: 9999; 
         }
 
         .container {
@@ -20,6 +27,7 @@
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
             border-radius: 10px;
             position: relative;
+            margin-top: 100px;
         }
 
         h1 {
@@ -28,14 +36,13 @@
             color: #444;
         }
 
-        
         .book-gallery {
             display: flex;
             gap: 20px;
             padding: 20px;
             scroll-behavior: smooth;
             justify-content: flex-start;
-            overflow-x: auto; 
+            overflow-x: auto;
             width: 100%;
         }
 
@@ -49,7 +56,7 @@
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             overflow: hidden;
-            flex-shrink: 0; 
+            flex-shrink: 0;
         }
 
         .book-card:hover {
@@ -99,7 +106,6 @@
             background-color: #0056b3;
         }
 
-        
         .scroll-button {
             background-color: #007bff;
             color: white;
@@ -110,7 +116,7 @@
             border-radius: 50%;
             position: absolute;
             top: 50%;
-            z-index: 10;
+            z-index: 5; 
             transition: transform 0.3s ease;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
         }
@@ -131,6 +137,7 @@
     </style>
 </head>
 <body>
+    
     <div id="navbar-placeholder"></div>
 
     <div class="container">
@@ -225,9 +232,10 @@
     <script src="js/bootstrap.min.js"></script>
 
     <script>
-    $(function(){
+        $(function(){
             $("#navbar-placeholder").load("navbar.html");
         });
+
         const buttons = document.querySelectorAll('.btn-show-description');
         buttons.forEach(button => {
             button.addEventListener('click', function() {
@@ -238,17 +246,16 @@
             });
         });
 
-    
         document.getElementById('scroll-left').addEventListener('click', function() {
             document.getElementById('book-gallery').scrollBy({
-                left: -300,  
+                left: -300,
                 behavior: 'smooth'
             });
         });
 
         document.getElementById('scroll-right').addEventListener('click', function() {
             document.getElementById('book-gallery').scrollBy({
-                left: 300,  
+                left: 300,
                 behavior: 'smooth'
             });
         });
