@@ -27,26 +27,27 @@
             color: #444;
         }
 
-      
+        /* Galeri Buku */
         .book-gallery {
             display: flex;
-            overflow-x: auto; 
+            overflow-x: auto; /* memungkinkan scroll horizontal */
             gap: 20px;
             padding: 20px;
-            scroll-behavior: smooth; 
-            justify-content: center; 
+            scroll-behavior: smooth;
+            justify-content: center;
+            width: max-content; /* agar konten lebih panjang dari layar dan bisa digeser */
         }
 
         .book-card {
-            width: 300px; 
-            height: 450px; 
+            width: 300px;
+            height: 450px;
             border: 1px solid #ddd;
             border-radius: 10px;
             background-color: white;
             text-align: center;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
-            overflow: hidden; 
+            overflow: hidden;
         }
 
         .book-card:hover {
@@ -73,7 +74,7 @@
             font-size: 14px;
             color: #666;
             padding: 0 10px;
-            display: none; 
+            display: none;
             margin-bottom: 15px;
         }
 
@@ -130,126 +131,4 @@
 <body>
 
     <div class="container">
-        <h1>Pameran Buku</h1>
-
-        <div class="book-gallery" id="book-gallery">
-     
-            <div class="book-card">
-                <img src="picture/624188002.jpg" alt="Buku 1">
-                <div class="book-card-body">
-                    <h3 class="book-card-title">Rumah Kaca di Ujung Bumi</h3>
-                    <p class="book-card-description">Buku ini ditulis oleh (Kim Choyeop) yang bercerita tentang Tahun 2058. Bumi hancur akibat serangan debu beracun yang mematikan.</p>
-                    <div class="book-card-button">
-                        <a href="#" class="btn-show-description">Deskripsi</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="book-card">
-                <img src="picture/624186012.jpg" alt="Buku 2">
-                <div class="book-card-body">
-                    <h3 class="book-card-title">Jini, Jinny</h3>
-                    <p class="book-card-description">Buku ini ditulis oleh (Jeong You-Jeong) yang bercerita tentang Lee Jini, salah seorang penjaga simpanse di Pusat Riset Primata.</p>
-                    <div class="book-card-button">
-                        <a href="#" class="btn-show-description">Deskripsi</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="book-card">
-                <img src="picture/624150005.jpg"" alt="Buku 3">
-                <div class="book-card-body">
-                    <h3 class="book-card-title">Princess, Bajak Laut & Alien</h3>
-                    <p class="book-card-description">Buku ini ditulis oleh (Clara Ng,Icha Rahmanti) yang mengisahkan MIKAL yang ingin memahami kenapa ayahnya harus diambil secara tragis.</p>
-                    <div class="book-card-button">
-                        <a href="#" class="btn-show-description">Deskripsi</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="book-card">
-                <img src="picture/624184006.jpg" alt="Buku 4">
-                <div class="book-card-body">
-                    <h3 class="book-card-title">Nirmala</h3>
-                    <p class="book-card-description">Buku ini ditulis oleh (Jutta Nymphius) yang bercerita tentang Sejak Ayahnya dipecat ayah kay selalu mabuk dan sering memukul Mama dan Kay.</p>
-                    <div class="book-card-button">
-                        <a href="#" class="btn-show-description">Deskripsi</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="book-card">
-                <img src="picture/624150001.jpg" alt="Buku 5">
-                <div class="book-card-body">
-                    <h3 class="book-card-title">The Ex Talk</h3>
-                    <p class="book-card-description">Buku ini ditulis oleh (Rachel Lynn Solomon) yang mengisahkan Shay Goldstein seorang produser di stasiun radio Seattle.</p>
-                    <div class="book-card-button">
-                        <a href="#" class="btn-show-description">Deskripsi</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="book-card">
-                <img src="picture/624186009.jpg" alt="Buku 6">
-                <div class="book-card-body">
-                    <h3 class="book-card-title">Kisah Jarum dan Kulit</h3>
-                    <p class="book-card-description">Ditulis oleh (Gu Byeong-Mo), mengisahkan makhluk-makhluk kecil yang membantu tukang sepatu yang sudah tua dan miskin membuat sepatu-sepatu indah untuk dijual.</p>
-                    <div class="book-card-button">
-                        <a href="#" class="btn-show-description">Deskripsi</a>
-                    </div>
-                </div>
-            </div>
-
-         
-            <div class="book-card">
-                <img src="picture/624172007.jpg" alt="Buku 7">
-                <div class="book-card-body">
-                    <h3 class="book-card-title">Nonik Jamu</h3>
-                    <p class="book-card-description">Buku karya (Rina Suryakusuma) yang mengisahkan Kinanti Bermimpi menjadi seorang peracik jamu.</p>
-                    <div class="book-card-button">
-                        <a href="#" class="btn-show-description">Deskripsi</a>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-
-        <button class="scroll-button scroll-left" id="scroll-left">&#8249;</button>
-        <button class="scroll-button scroll-right" id="scroll-right">&#8250;</button>
-
-    </div>
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-
-    <script>
-        const buttons = document.querySelectorAll('.btn-show-description');
-        buttons.forEach(button => {
-            button.addEventListener('click', function() {
-                const cardBody = this.closest('.book-card').querySelector('.book-card-body');
-                const description = cardBody.querySelector('.book-card-description');
-                
-                
-                description.style.display = description.style.display === 'block' ? 'none' : 'block';
-                this.innerText = this.innerText === 'Deskripsi' ? 'Sembunyikan' : 'Tampilkan';
-            });
-        });
-
-        
-        document.getElementById('scroll-left').addEventListener('click', function() {
-            document.getElementById('book-gallery').scrollBy({
-                left: -300,  
-                behavior: 'smooth'
-            });
-        });
-
-        document.getElementById('scroll-right').addEventListener('click', function() {
-            document.getElementById('book-gallery').scrollBy({
-                left: 300,  
-                behavior: 'smooth'
-            });
-        });
-    </script>
-
-</body>
-</html>
+      
