@@ -1,1 +1,112 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perpustakaan Wince Simarmata</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-image: url("picture/efa2c05b-5f7e-430f-a22e-867136c5e31e.jpg");
+            background-size: cover;
+            color: #333;
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
 
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        h1, h2 {
+            color: #444;
+            text-align: center;
+        }
+
+        h3 {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        section {
+            margin-bottom: 30px;
+        }
+
+        footer {
+            margin-top: 20px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        img {
+            max-width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .media-section {
+            margin-top: 50px;
+        }
+
+        .audio-control {
+            width: 100%;
+            max-width: 500px;
+            margin: auto;
+        }
+
+        .nav > li > a {
+            padding: 15px 20px;
+        }
+
+        .navbar-brand {
+            font-weight: bold;
+            font-size: 24px;
+        } 
+          
+    </style>
+</head>
+<body>
+    <div id="navbar-placeholder"></div>
+
+<div class="container media-section my-5">
+    <h1 id="media" class="text-center mb-4">Media</h1>
+    
+    <section>
+        <h3 class="text-center mb-4">Berikut ini adalah gambar dari gedung Perpustakaan UKI</h3>
+        
+        <div class="text-center mb-4">
+            <img src="picture/Cuplikan layar 2024-10-05 230829.png" alt="Perpustakaan UNPRI Medan" class="img-responsive center-block" style="max-width: 100%; height: auto;">
+            <p class="mt-2"><i>Perpustakaan UKI Medan</i></p>
+        </div>
+        
+        <div class="text-center mb-4">
+            <h4 class="mb-3">Video Perpustakaan UKI</h4>
+            <iframe class="embed-responsive-item" width="100%" height="315" src="https://www.youtube.com/embed/isBqAzO1vvo?si=0S-HtAxKc5ATFG2C" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+        </div>
+        
+        <div class="text-center mb-4">
+            <h4>Jun Munthe - Rapon Hi</h4>
+            <audio controls class="audio-control">
+                <source src="music/Jun Munthe - Raphon Ho (Official Music Video).mp3" type="audio/mpeg">
+            </audio>
+        </div>
+    </section>
+</div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+    <script>
+    $(function(){
+        $("#navbar-placeholder").load("navbar.html");
+    });
+</script>
+    
+</body>
+</html>
