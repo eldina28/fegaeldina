@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pameran Buku</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Tampilan umum halaman */
+        body {
+            background-color: #f4f4f4;
+            color: #333;
+            font-family: 'Arial', sans-serif;
+        }
+
+        /* Container untuk pameran buku */
+        .container {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 40px;
+            color: #444;
+        }
+
+        .book-card {
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            overflow: hidden;
+            background-color: white;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .book-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .book-card img {
+            width: 100%;
+            height: auto;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .book-card-body {
+            padding: 20px;
+        }
+
+        .book-card-title {
+            font-size: 18px;
+            font-weight: bold;
+            color: #007bff;
+            margin-bottom: 10px;
+        }
+
+        .book-card-description {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        .book-card-button {
+            text-align: center;
+        }
+
+        .book-card-button a {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            transition: background-color 0.3s ease;
+        }
+
+        .book-card-button a:hover {
+            background-color: #0056b3;
+        }
+
+        /* Grid layout untuk buku */
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .col-md-4 {
+            margin-bottom: 30px;
+            flex: 1;
+            max-width: 30%;
+        }
+
+        /* Responsif - mobile */
+        @media (max-width: 768px) {
+            .col-md-4 {
+                max-width: 100%;
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Pameran Buku</h1>
+
+        <div class="row">
+            <!-- Buku 1 -->
+            <div class="col-md-4">
+                <div class="book-card">
+                    <img src="path_to_image/buku1.jpg" alt="Buku 1">
+                    <div class="book-card-body">
+                        <h3 class="book-card-title">Judul Buku 1</h3>
+                        <p class="book-card-description">Deskripsi singkat mengenai buku pertama ini. Buku ini membahas topik tentang...</p>
+                        <div class="book-card-button">
+                            <a href="#">Detail Buku</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Buku 2 -->
+            <div class="col-md-4">
+                <div class="book-card">
+                    <img src="path_to_image/buku2.jpg" alt="Buku 2">
+                    <div class="book-card-body">
+                        <h3 class="book-card-title">Judul Buku 2</h3>
+                        <p class="book-card-description">Deskripsi singkat mengenai buku kedua ini. Buku ini menceritakan tentang...</p>
+                        <div class="book-card-button">
+                            <a href="#">Detail Buku</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Buku 3 -->
+            <div class="col-md-4">
+                <div class="book-card">
+                    <img src="path_to_image/buku3.jpg" alt="Buku 3">
+                    <div class="book-card-body">
+                        <h3 class="book-card-title">Judul Buku 3</h3>
+                        <p class="book-card-description">Deskripsi singkat mengenai buku ketiga ini. Buku ini memberikan wawasan tentang...</p>
+                        <div class="book-card-button">
+                            <a href="#">Detail Buku</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Buku 4 -->
+            <div class="col-md-4">
+                <div class="book-card">
+                    <img src="path_to_image/buku4.jpg" alt="Buku 4">
+                    <div class="book-card-body">
+                        <h3 class="book-card-title">Judul Buku 4</h3>
+                        <p class="book-card-description">Deskripsi singkat mengenai buku keempat ini. Buku ini akan membawa Anda dalam perjalanan...</p>
+                        <div class="book-card-button">
+                            <a href="#">Detail Buku</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Buku 5 -->
+            <div class="col-md-4">
+                <div class="book-card">
+                    <img src="path_to_image/buku5.jpg" alt="Buku 5">
+                    <div class="book-card-body">
+                        <h3 class="book-card-title">Judul Buku 5</h3>
+                        <p class="book-card-description">Deskripsi singkat mengenai buku kelima ini. Buku ini mengulas topik-topik yang menarik tentang...</p>
+                        <div class="book-card-button">
+                            <a href="#">Detail Buku</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+</body>
+</html>
