@@ -3,17 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pameran Buku</title>
+    <title>Pameran Buku Geser</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <style>
-        /* Tampilan umum halaman */
         body {
             background-color: #f4f4f4;
             color: #333;
             font-family: 'Arial', sans-serif;
         }
 
-        /* Container untuk pameran buku */
         .container {
             max-width: 1200px;
             margin: 50px auto;
@@ -29,11 +27,23 @@
             color: #444;
         }
 
+        /* Kontainer untuk bagian pameran buku */
+        .book-gallery {
+            display: flex;
+            overflow-x: scroll; /* memungkinkan untuk scroll secara horizontal */
+            gap: 20px;
+            padding: 20px;
+            scroll-behavior: smooth; /* scroll yang halus */
+        }
+
         .book-card {
+            width: 200px;
+            height: 300px;
             border: 1px solid #ddd;
             border-radius: 10px;
-            overflow: hidden;
             background-color: white;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
@@ -44,33 +54,32 @@
 
         .book-card img {
             width: 100%;
-            height: auto;
+            height: 150px;
+            object-fit: cover;
             border-bottom: 1px solid #ddd;
-        }
-
-        .book-card-body {
-            padding: 20px;
+            border-radius: 10px 10px 0 0;
         }
 
         .book-card-title {
-            font-size: 18px;
+            font-size: 16px;
             font-weight: bold;
             color: #007bff;
-            margin-bottom: 10px;
+            margin: 10px 0;
         }
 
         .book-card-description {
-            font-size: 14px;
+            font-size: 12px;
             color: #666;
+            padding: 0 10px;
             margin-bottom: 15px;
         }
 
         .book-card-button {
-            text-align: center;
+            margin-bottom: 10px;
         }
 
         .book-card-button a {
-            padding: 10px 20px;
+            padding: 8px 16px;
             background-color: #007bff;
             color: white;
             text-decoration: none;
@@ -84,26 +93,28 @@
             background-color: #0056b3;
         }
 
-        /* Grid layout untuk buku */
-        .row {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
+        /* Styling untuk kontrol scroll */
+        .scroll-button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            z-index: 10;
         }
 
-        .col-md-4 {
-            margin-bottom: 30px;
-            flex: 1;
-            max-width: 30%;
+        .scroll-left {
+            left: 10px;
         }
 
-        /* Responsif - mobile */
-        @media (max-width: 768px) {
-            .col-md-4 {
-                max-width: 100%;
-                margin-bottom: 20px;
-            }
+        .scroll-right {
+            right: 10px;
         }
+
     </style>
 </head>
 <body>
@@ -111,82 +122,93 @@
     <div class="container">
         <h1>Pameran Buku</h1>
 
-        <div class="row">
-            <!-- Buku 1 -->
-            <div class="col-md-4">
-                <div class="book-card">
-                    <img src="path_to_image/buku1.jpg" alt="Buku 1">
-                    <div class="book-card-body">
-                        <h3 class="book-card-title">Judul Buku 1</h3>
-                        <p class="book-card-description">Deskripsi singkat mengenai buku pertama ini. Buku ini membahas topik tentang...</p>
-                        <div class="book-card-button">
-                            <a href="#">Detail Buku</a>
-                        </div>
+        <div class="book-gallery" id="book-gallery">
+     
+            <div class="book-card">
+                <img src="path_to_image/buku1.jpg" alt="Buku 1">
+                <div class="book-card-body">
+                    <h3 class="book-card-title">Rumah Kaca di Ujung Bumi</h3>
+                    <p class="book-card-description">Buku ini ditulus oleh (Kim Choyeop) yang dimana bercerita tentang Tahun 2058. Bumi hancur akibat serangan dust—debu beracun yang mematikan. Manusia berlindung di dalam kota-kota kubah dan berusaha bertahan hidup dengan segala cara.</p>
+                    <div class="book-card-button">
+                        <a href="#">Detail Buku</a>
                     </div>
                 </div>
             </div>
 
-            <!-- Buku 2 -->
-            <div class="col-md-4">
-                <div class="book-card">
-                    <img src="path_to_image/buku2.jpg" alt="Buku 2">
-                    <div class="book-card-body">
-                        <h3 class="book-card-title">Judul Buku 2</h3>
-                        <p class="book-card-description">Deskripsi singkat mengenai buku kedua ini. Buku ini menceritakan tentang...</p>
-                        <div class="book-card-button">
-                            <a href="#">Detail Buku</a>
-                        </div>
+       
+            <div class="book-card">
+                <img src="path_to_image/buku2.jpg" alt="Buku 2">
+                <div class="book-card-body">
+                    <h3 class="book-card-title">Jini, Jinny</h3>
+                    <p class="book-card-description">Buku ini di tulis oleh (Jeong You-Jeong) yang bercerita tentang Lee Jini, salah seorang penjaga simpanse di Pusat Riset Primata</p>
+                    <div class="book-card-button">
+                        <a href="#">Detail Buku</a>
                     </div>
                 </div>
             </div>
 
-            <!-- Buku 3 -->
-            <div class="col-md-4">
-                <div class="book-card">
-                    <img src="path_to_image/buku3.jpg" alt="Buku 3">
-                    <div class="book-card-body">
-                        <h3 class="book-card-title">Judul Buku 3</h3>
-                        <p class="book-card-description">Deskripsi singkat mengenai buku ketiga ini. Buku ini memberikan wawasan tentang...</p>
-                        <div class="book-card-button">
-                            <a href="#">Detail Buku</a>
-                        </div>
+        
+            <div class="book-card">
+                <img src="path_to_image/buku3.jpg" alt="Buku 3">
+                <div class="book-card-body">
+                    <h3 class="book-card-title">Princess, Bajak Laut & Alien</h3>
+                    <p class="book-card-description">Buku ini ditulis oleh (Clara Ng, Icha Rahmanti) yang mengisahkan MIKAL yang ingin memahami kenapa ayahnya harus diambil secepat itu secara tragis. Yang membuat Pikiran itu kerap memberatkan hati, membuatnya menjalani hari dengan muram</p>
+                    <div class="book-card-button">
+                        <a href="#">Detail Buku</a>
                     </div>
                 </div>
             </div>
 
-            <!-- Buku 4 -->
-            <div class="col-md-4">
-                <div class="book-card">
-                    <img src="path_to_image/buku4.jpg" alt="Buku 4">
-                    <div class="book-card-body">
-                        <h3 class="book-card-title">Judul Buku 4</h3>
-                        <p class="book-card-description">Deskripsi singkat mengenai buku keempat ini. Buku ini akan membawa Anda dalam perjalanan...</p>
-                        <div class="book-card-button">
-                            <a href="#">Detail Buku</a>
-                        </div>
+
+            <div class="book-card">
+                <img src="path_to_image/buku4.jpg" alt="Buku 4">
+                <div class="book-card-body">
+                    <h3 class="book-card-title">Nirmala</h3>
+                    <p class="book-card-description">Buku ini di tulis oleh (Jutta Nymphius) yang bercerita tentang Kay yang dimana Sejak Ayahnya dipecat ayah selalu mabuk dan sering memukul Mama dan Kay. Gara-gara itu, Kay menyimpan banyak amarah dalam dirinya dan melampiaskannya ke para adik kelas di sekolah.</p>
+                    <div class="book-card-button">
+                        <a href="#">Detail Buku</a>
                     </div>
                 </div>
             </div>
 
-            <!-- Buku 5 -->
-            <div class="col-md-4">
-                <div class="book-card">
-                    <img src="path_to_image/buku5.jpg" alt="Buku 5">
-                    <div class="book-card-body">
-                        <h3 class="book-card-title">Judul Buku 5</h3>
-                        <p class="book-card-description">Deskripsi singkat mengenai buku kelima ini. Buku ini mengulas topik-topik yang menarik tentang...</p>
-                        <div class="book-card-button">
-                            <a href="#">Detail Buku</a>
-                        </div>
+
+            <div class="book-card">
+                <img src="path_to_image/buku5.jpg" alt="Buku 5">
+                <div class="book-card-body">
+                    <h3 class="book-card-title">The Ex Talk</h3>
+                    <p class="book-card-description">Buku ini ditulis oleh (Rachel Lynn Solomon) yang mengisahkan Shay Goldstein seorang produser di stasiun radio Seattle</p>
+                    <div class="book-card-button">
+                        <a href="#">Detail Buku</a>
                     </div>
                 </div>
             </div>
 
         </div>
+
+        <button class="scroll-button scroll-left" id="scroll-left">&#8249;</button>
+        <button class="scroll-button scroll-right" id="scroll-right">&#8250;</button>
+
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+
+    <script>
+      
+        document.getElementById('scroll-left').addEventListener('click', function() {
+            document.getElementById('book-gallery').scrollBy({
+                left: -200,
+                behavior: 'smooth'
+            });
+        });
+
+        document.getElementById('scroll-right').addEventListener('click', function() {
+            document.getElementById('book-gallery').scrollBy({
+                left: 200, 
+                behavior: 'smooth' 
+            });
+        });
+    </script>
 
 </body>
 </html>
