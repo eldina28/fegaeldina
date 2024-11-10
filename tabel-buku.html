@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Perpustakaan fega manullang</title>
+    <title>Perpustakaan Fega Manullang</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
@@ -44,12 +44,72 @@
             text-align: center;
             font-weight: bold;
         }
+
+        table {
+            width: 100%;
+            margin-top: 20px;
+            border-radius: 10px;
+            overflow: hidden; /* Untuk memastikan border-radius pada sudut tabel */
+            border-collapse: collapse; /* Untuk border tabel yang lebih rapih */
+        }
+
+        th, td {
+            padding: 12px 20px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #ff69b4; /* Warna header pink terang */
+            color: white;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+
+        td {
+            background-color: #f9f9f9;
+        }
+
+        /* Alternatif warna baris tabel */
+        tbody tr:nth-child(odd) {
+            background-color: #f2f2f2;
+        }
+
+        tbody tr:nth-child(even) {
+            background-color: #fff;
+        }
+
+        /* Efek hover saat kursor berada di atas baris */
+        tbody tr:hover {
+            background-color: #ffe6f1;
+            cursor: pointer;
+        }
+
+        /* Menambah border pada header */
+        th {
+            border-bottom: 2px solid #ff69b4;
+        }
+
+        /* Menambah padding dan radius untuk footer */
+        footer {
+            padding: 10px 0;
+            background-color: #ff69b4;
+            color: white;
+            font-size: 14px;
+            border-radius: 10px;
+        }
+
+        /* Judul Tabel */
+        #tabel-buku {
+            font-size: 24px;
+            color: #333;
+        }
     </style>
 </head>
 <body>
     <div id="navbar-placeholder"></div>
 
-<h2 id="tabel-buku" class="text-center mt-5 mb-4">Tabel Bahan Buku</h2>
+    <h2 id="tabel-buku" class="text-center mt-5 mb-4">Tabel Bahan Buku</h2>
     <table class="table table-bordered table-striped">
         <thead>
             <tr>
@@ -69,7 +129,7 @@
                 <td>Tere Liye</td>
                 <td>Sabak Grip Nusantara</td>
                 <td>2023</td>
-                <td>444 </td>
+                <td>444</td>
                 <td>978-602-5417-25-29786238829606</td>
             </tr>
             <tr>
@@ -109,11 +169,11 @@
                 <td>978-602-06-7878-8</td>
             </tr>
         </tbody>
-    </table> 
+    </table>
 
-  <footer>
-     <p>&copy; 2024 Perpustakaan fega. All Rights Reserved.</p>
- </footer>
+    <footer>
+        <p>&copy; 2024 Perpustakaan Fega. All Rights Reserved.</p>
+    </footer>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
@@ -122,7 +182,6 @@
     $(function(){
         $("#navbar-placeholder").load("navbar.html");
     });
-</script>
-
+    </script>
 </body>
 </html>
