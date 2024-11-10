@@ -225,10 +225,12 @@
     <script src="js/bootstrap.min.js"></script>
 
     <script>
-        $(function(){
-        $("#navbar-placeholder").load("navbar.html");
+    $(function() {
+        $("#navbar-placeholder").load("navbar.html", function() 
+            $('.dropdown-toggle').dropdown(); 
+            $('.navbar-collapse').collapse();
+        });
     });
-        
         const buttons = document.querySelectorAll('.btn-show-description');
         buttons.forEach(button => {
             button.addEventListener('click', function() {
