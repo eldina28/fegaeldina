@@ -101,13 +101,20 @@
             background-color: #007bff;
             color: white;
             border: none;
-            padding: 10px;
-            font-size: 16px;
+            padding: 15px;
+            font-size: 20px;
             cursor: pointer;
             border-radius: 50%;
             position: absolute;
             top: 50%;
             z-index: 10;
+            transition: transform 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .scroll-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
         }
 
         .scroll-left {
@@ -133,7 +140,7 @@
                     <h3 class="book-card-title">Rumah Kaca di Ujung Bumi</h3>
                     <p class="book-card-description">Buku ini ditulis oleh (Kim Choyeop) yang bercerita tentang Tahun 2058. Bumi hancur akibat serangan debu beracun yang mematikan.</p>
                     <div class="book-card-button">
-                        <a href="#" class="btn-show-description">Tampilkan Deskripsi</a>
+                        <a href="#" class="btn-show-description">Deskripsi</a>
                     </div>
                 </div>
             </div>
@@ -144,29 +151,29 @@
                     <h3 class="book-card-title">Jini, Jinny</h3>
                     <p class="book-card-description">Buku ini ditulis oleh (Jeong You-Jeong) yang bercerita tentang Lee Jini, salah seorang penjaga simpanse di Pusat Riset Primata.</p>
                     <div class="book-card-button">
-                        <a href="#" class="btn-show-description">Tampilkan Deskripsi</a>
+                        <a href="#" class="btn-show-description">Deskripsi</a>
                     </div>
                 </div>
             </div>
 
             <div class="book-card">
-                <img src="picture/624184006.jpg" alt="Buku 3">
+                <img src="picture/624150005.jpg"" alt="Buku 3">
                 <div class="book-card-body">
                     <h3 class="book-card-title">Princess, Bajak Laut & Alien</h3>
-                    <p class="book-card-description">Buku ini ditulis oleh (Clara Ng, Icha Rahmanti) yang mengisahkan MIKAL yang ingin memahami kenapa ayahnya harus diambil secara tragis.</p>
+                    <p class="book-card-description">Buku ini ditulis oleh (Clara Ng,Icha Rahmanti) yang mengisahkan MIKAL yang ingin memahami kenapa ayahnya harus diambil secara tragis.</p>
                     <div class="book-card-button">
-                        <a href="#" class="btn-show-description">Tampilkan Deskripsi</a>
+                        <a href="#" class="btn-show-description">Deskripsi</a>
                     </div>
                 </div>
             </div>
 
             <div class="book-card">
-                <img src="picture/624150005.jpg" alt="Buku 4">
+                <img src="picture/624184006.jpg" alt="Buku 4">
                 <div class="book-card-body">
                     <h3 class="book-card-title">Nirmala</h3>
-                    <p class="book-card-description">Buku ini ditulis oleh (Jutta Nymphius) yang bercerita tentang Kay yang dimana Sejak Ayahnya dipecat ayah selalu mabuk dan sering memukul Mama dan Kay.</p>
+                    <p class="book-card-description">Buku ini ditulis oleh (Jutta Nymphius) yang bercerita tentang Sejak Ayahnya dipecat ayah kay selalu mabuk dan sering memukul Mama dan Kay.</p>
                     <div class="book-card-button">
-                        <a href="#" class="btn-show-description">Tampilkan Deskripsi</a>
+                        <a href="#" class="btn-show-description">Deskripsi</a>
                     </div>
                 </div>
             </div>
@@ -177,7 +184,31 @@
                     <h3 class="book-card-title">The Ex Talk</h3>
                     <p class="book-card-description">Buku ini ditulis oleh (Rachel Lynn Solomon) yang mengisahkan Shay Goldstein seorang produser di stasiun radio Seattle.</p>
                     <div class="book-card-button">
-                        <a href="#" class="btn-show-description">Tampilkan Deskripsi</a>
+                        <a href="#" class="btn-show-description">Deskripsi</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Buku tambahan 1 -->
+            <div class="book-card">
+                <img src="picture/624150007.jpg" alt="Buku 6">
+                <div class="book-card-body">
+                    <h3 class="book-card-title">Kisah Jarum dan Kulit</h3>
+                    <p class="book-card-description">Ditulis oleh (Gu Byeong-Mo), mengisahkan makhluk-makhluk kecil yang membantu tukang sepatu yang sudah tua dan miskin membuat sepatu-sepatu indah untuk dijual.</p>
+                    <div class="book-card-button">
+                        <a href="#" class="btn-show-description">Deskripsi</a>
+                    </div>
+                </div>
+            </div>
+
+         
+            <div class="book-card">
+                <img src="picture/624150010.jpg" alt="Buku 7">
+                <div class="book-card-body">
+                    <h3 class="book-card-title">Nonik Jamu</h3>
+                    <p class="book-card-description">Buku karya (Rina Suryakusuma) yang mengisahkan Kinanti Bermimpi menjadi seorang peracik jamu.</p>
+                    <div class="book-card-button">
+                        <a href="#" class="btn-show-description">Deskripsi</a>
                     </div>
                 </div>
             </div>
@@ -193,30 +224,29 @@
     <script src="js/bootstrap.min.js"></script>
 
     <script>
-        // Fungsi untuk menampilkan dan menyembunyikan deskripsi
         const buttons = document.querySelectorAll('.btn-show-description');
         buttons.forEach(button => {
             button.addEventListener('click', function() {
                 const cardBody = this.closest('.book-card').querySelector('.book-card-body');
                 const description = cardBody.querySelector('.book-card-description');
                 
-                // Toggle deskripsi
+                
                 description.style.display = description.style.display === 'block' ? 'none' : 'block';
-                this.innerText = this.innerText === 'Deskripsi' ? 'Sembunyikan' : 'Tampilkan'; // Ganti teks tombol
+                this.innerText = this.innerText === 'Deskripsi' ? 'Sembunyikan' : 'Tampilkan';
             });
         });
 
-        // Scroll Left and Right
+        
         document.getElementById('scroll-left').addEventListener('click', function() {
             document.getElementById('book-gallery').scrollBy({
-                left: -300,  // Geser lebih sedikit untuk menjaga agar buku tidak terlalu jauh dari tampilan
+                left: -300,  
                 behavior: 'smooth'
             });
         });
 
         document.getElementById('scroll-right').addEventListener('click', function() {
             document.getElementById('book-gallery').scrollBy({
-                left: 300,  // Geser lebih sedikit
+                left: 300,  
                 behavior: 'smooth'
             });
         });
